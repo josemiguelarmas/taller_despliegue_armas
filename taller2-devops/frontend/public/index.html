@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Distribuida</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Calculadora Distribuida</h1>
+    <p class="subtitle">Taller 2 - DevOps (Fase Dev)</p>
+
+    <section class="card">
+      <div class="row">
+        <input type="number" id="inputA" placeholder="Número A" />
+        <select id="operation">
+          <option value="sum">Suma (+)</option>
+          <option value="subtract">Resta (-)</option>
+          <option value="multiply">Multiplicación (×)</option>
+          <option value="divide">División (÷)</option>
+        </select>
+        <input type="number" id="inputB" placeholder="Número B" />
+      </div>
+      <button id="calculateBtn">Calcular</button>
+      <p id="result" class="result"></p>
+      <p id="errorMsg" class="error"></p>
+    </section>
+
+    <section class="card">
+      <h2>Historial (últimas 5 operaciones)</h2>
+      <button id="refreshHistoryBtn">Actualizar historial</button>
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th>Operación</th>
+            <th>A</th>
+            <th>B</th>
+            <th>Resultado</th>
+            <th>Fecha</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Estado del sistema</h2>
+      <button id="statusBtn">Consultar estado</button>
+      <pre id="statusOutput"></pre>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

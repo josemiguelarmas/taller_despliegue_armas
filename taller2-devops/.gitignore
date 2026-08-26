@@ -1,0 +1,71 @@
+# Dependencias
+node_modules/
+vendor/
+
+# Variables de entorno
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+logs/
+
+# Archivos temporales
+tmp/
+temp/
+*.tmp
+
+# Builds / distribución
+dist/
+build/
+out/
+target/
+
+# Cachés
+.cache/
+.npm/
+.yarn/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+
+# Python
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# IDEs / editores
+.vscode/
+.idea/
+*.iml
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Cobertura / testing
+coverage/
+htmlcov/
+.pytest_cache/
+
+# Docker
+docker-compose.override.yml
+
+# Certificados y claves locales
+*.pem
+*.key
+*.crt
+secrets/
+
+# Nginx
+nginx/logs/
+nginx/cache/
+
+# Archivos generados
+*.swp
+*.swo

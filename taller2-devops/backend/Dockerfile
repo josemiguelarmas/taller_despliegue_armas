@@ -1,15 +1,12 @@
-# Usamos una versión ligera de Node.js
-FROM node:18-alpine
+  FROM node:18-alpine
 
-# Definimos el directorio de trabajo
-WORKDIR /app
+  WORKDIR /app
 
-# Copiamos los archivos de dependencias y las instalamos
-COPY package*.json ./
-RUN npm install
+  COPY package*.json ./
+  RUN npm install
 
-# Copiamos el resto del código
-COPY . .
+  COPY . .
 
-# Comando para iniciar la aplicación
-CMD ["npm", "start"]
+  EXPOSE 5000
+
+  CMD ["npm", "start"]

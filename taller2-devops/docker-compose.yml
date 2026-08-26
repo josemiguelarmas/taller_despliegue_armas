@@ -1,19 +1,27 @@
-version: '3.8'
+  version: '3.8'
 
-services:
-  backend:
-    build: ./backend
-    ports:
-      - "5000:5000"
-    environment:
-      - PORT=5000
+  services:
+    backend:
+      build: ./backend
+      environment:
+        - PORT=5000
+      expose:
+        - "5000"
 
-  frontend:
-    build: ./frontend
-    ports:
-      - "3000:3000"
-    environment:
-      - PORT=3000
-      - BACKEND_URL=http://localhost:5000
-    depends_on:
-      - backend
+    frontend:
+      build: ./frontend
+      environment:
+        - PORT=3000
+        - BACKEND_URL=/api
+      expose:
+        - "3000"
+      depends_on:
+        - backend
+
+    nginx:
+      build: ./nginx
+      ports:
+        - "80:80"
+      depends_on:
+        - backend
+        - frontend

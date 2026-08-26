@@ -21,7 +21,7 @@
     nginx:
       build: ./nginx
       ports:
-        - "9091:9091"
+        - "9091:80"
       depends_on:
         - backend
         - frontend

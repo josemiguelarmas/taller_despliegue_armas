@@ -1,0 +1,20 @@
+name: Pipeline de Despliegue (CI/CD)
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Desplegar en PC del Laboratorio (Runner)
+    runs-on: self-hosted
+
+    steps:
+      - name: Descargar el código fuente
+        uses: actions/checkout@v4
+
+      - name: Reconstruir y levantar contenedores con Docker
+        working-directory: taller2-devops
+        run: |
+          docker compose up -d --build

@@ -15,6 +15,5 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Reconstruir y levantar contenedores con Docker
-        working-directory: taller2-devops
         run: |
           docker compose up -d --build
